@@ -1,29 +1,58 @@
+class Dice //models one single dice cube
+{
+  //variable declarations here
+  int dots, myX, myY;
+  Dice(int x, int y) //constructor
+  {
+    //variable initializations here
+    myX = x;
+    myY = y;
+    dots = (int)(Math.random()*6)+1;
+  }
+  void roll()
+  {
+    // Math.random() statement to gen 1-6
+  }
+  void show()
+  {
+    fill(137, 60, 200);
+    rect(myX, myY, 50, 50);
+
+    //if 1 if 2 if 3 stuff
+    fill(0);
+    if (dots == 1) {
+      ellipse(myX + 25, myY + 25, 10, 10);
+    } else if (dots == 2) {
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+    } else if (dots == 3){
+      
+    }
+    
+  }
+}
+Dice dean;
 void setup()
 {
-	noLoop();
+  size(500, 500);
+  noLoop();
+  //dean = new Dice(0,0); //the one die
 }
 void draw()
 {
-	//your code here
+  //for loop to make rows and columns
+  for (int i = 0; i <= 3; i++) {
+    for (int j = 0; j <= 3; j++) {
+      dean = new Dice (j*50, i*50);
+      dean.show();
+    }
+    System.out.println();
+  }
+  //int sum = dean.dots + dean.dots; 
+  //fill(0);
+  //text("Total: " +sum, 20, 225);
 }
 void mousePressed()
 {
-	redraw();
-}
-class Die //models one single dice cube
-{
-	//variable declarations here
-	
-	Die(int x, int y) //constructor
-	{
-		//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
+  redraw();
 }
