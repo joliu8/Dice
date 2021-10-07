@@ -15,7 +15,7 @@ class Dice //models one single dice cube
   }
   void show()
   {
-    fill(137, 60, 200);
+    fill(148, 219, 235);
     rect(myX, myY, 50, 50);
 
     //if 1 if 2 if 3 stuff
@@ -25,10 +25,29 @@ class Dice //models one single dice cube
     } else if (dots == 2) {
       ellipse(myX + 15, myY + 15, 10, 10);
       ellipse(myX + 35, myY + 35, 10, 10);
-    } else if (dots == 3){
-      
+    } else if (dots == 3) {
+      ellipse(myX + 25, myY + 25, 10, 10);
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+    } else if (dots == 4) {
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 15, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 15, 10, 10);
+    } else if (dots == 5) {
+      ellipse(myX + 15, myY + 15, 10, 10);
+      ellipse(myX + 15, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 35, 10, 10);
+      ellipse(myX + 35, myY + 15, 10, 10);
+      ellipse(myX + 25, myY + 25, 10, 10);
+    } else {
+      ellipse(myX + 15, myY + 12, 10, 10);
+      ellipse(myX + 15, myY + 25, 10, 10);
+      ellipse(myX + 15, myY + 38, 10, 10);
+      ellipse(myX + 35, myY + 38, 10, 10);
+      ellipse(myX + 35, myY + 25, 10, 10);
+      ellipse(myX + 35, myY + 12, 10, 10);
     }
-    
   }
 }
 Dice dean;
@@ -41,8 +60,8 @@ void setup()
 void draw()
 {
   //for loop to make rows and columns
-  for (int i = 0; i <= 3; i++) {
-    for (int j = 0; j <= 3; j++) {
+  for (int i = 0; i <= (int)(Math.random()*15); i++) {
+    for (int j = 0; j <= (int)(Math.random()*15); j++) {
       dean = new Dice (j*50, i*50);
       dean.show();
     }
