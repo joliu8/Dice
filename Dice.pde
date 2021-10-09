@@ -12,7 +12,7 @@ class Dice //models one single dice cube
 
   void show()
   {
-    fill(148, 219, 235);
+    fill((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
     rect(myX, myY, 50, 50);
 
     fill(0);
