@@ -9,16 +9,12 @@ class Dice //models one single dice cube
     myY = y;
     dots = (int)(Math.random()*6)+1;
   }
-  void roll()
-  {
-    // Math.random() statement to gen 1-6
-  }
+
   void show()
   {
     fill(148, 219, 235);
     rect(myX, myY, 50, 50);
 
-    //if 1 if 2 if 3 stuff
     fill(0);
     if (dots == 1) {
       ellipse(myX + 25, myY + 25, 10, 10);
@@ -48,28 +44,30 @@ class Dice //models one single dice cube
       ellipse(myX + 35, myY + 25, 10, 10);
       ellipse(myX + 35, myY + 12, 10, 10);
     }
+    
   }
 }
+
 Dice dean;
+int sum = 0;
 void setup()
 {
-  size(500, 500);
-  noLoop();
+  size(500, 525);
+  //noLoop();
+  fill(0);
   //dean = new Dice(0,0); //the one die
 }
-void draw()
-{
+void draw(){
   //for loop to make rows and columns
-  for (int i = 0; i <= (int)(Math.random()*15); i++) {
-    for (int j = 0; j <= (int)(Math.random()*15); j++) {
+
+  for (int i = 0; i < (int)(Math.random()*11); i++) {
+    for (int j = 0; j < (int)(Math.random()*11); j++) {
       dean = new Dice (j*50, i*50);
       dean.show();
     }
-    System.out.println();
   }
-  //int sum = dean.dots + dean.dots; 
-  //fill(0);
-  //text("Total: " +sum, 20, 225);
+    sum = sum + dean.dots;
+        text("Total: " +sum, 20, 425);
 }
 void mousePressed()
 {
