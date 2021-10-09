@@ -44,7 +44,6 @@ class Dice //models one single dice cube
       ellipse(myX + 35, myY + 25, 10, 10);
       ellipse(myX + 35, myY + 12, 10, 10);
     }
-    
   }
 }
 
@@ -57,17 +56,17 @@ void setup()
   fill(0);
   //dean = new Dice(0,0); //the one die
 }
-void draw(){
+void draw() {
   //for loop to make rows and columns
 
   for (int i = 0; i < (int)(Math.random()*11); i++) {
     for (int j = 0; j < (int)(Math.random()*11); j++) {
       dean = new Dice (j*50, i*50);
       dean.show();
+      sum = sum + dean.dots;
     }
   }
-    sum = sum + dean.dots;
-        text("Total: " +sum, 20, 425);
+  text("Total: " +sum, 20, 425);
 }
 void mousePressed()
 {
