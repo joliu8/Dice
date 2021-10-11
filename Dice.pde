@@ -48,27 +48,38 @@ class Dice //models one single dice cube
 }
 
 Dice dean;
-int sum = 0;
 void setup()
 {
-  size(500, 525);
-  //noLoop();
+  size(500, 550);
+  noLoop();
   fill(0);
   //dean = new Dice(0,0); //the one die
 }
+
 void draw() {
   //for loop to make rows and columns
-
-  for (int i = 0; i < (int)(Math.random()*11); i++) {
-    for (int j = 0; j < (int)(Math.random()*11); j++) {
+  background (250, 250, 250, 50);
+  int sum = 0;
+  int random = (int)(Math.random()*10)+1;
+  for (int i = 0; i < random; i++) {
+    for (int j = 0; j < random; j++) {
       dean = new Dice (j*50, i*50);
       dean.show();
       sum = sum + dean.dots;
     }
   }
-  text("Total: " +sum, 20, 425);
+  textSize(20);
+  text("Total: " +sum, 0, 525);
+  text("Clicks: " + mouseClicks, 300, 525);
 }
+
+int mouseClicks = 0;
 void mousePressed()
 {
   redraw();
+  if (mouseButton == LEFT || mouseButton == RIGHT) { 
+    mouseClicks++;
+  } else { 
+    mouseClicks = 0;
+  }
 }
