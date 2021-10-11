@@ -50,7 +50,7 @@ class Dice //models one single dice cube
 Dice dean;
 void setup()
 {
-  size(800, 850);
+  size(700, 750);
   noLoop();
   fill(0);
   //dean = new Dice(0,0); //the one die
@@ -58,7 +58,7 @@ void setup()
 
 void draw() {
   int sum = 0;
-  int random = (int)(Math.random()*16)+1;
+  int random = (int)(Math.random()*14)+1;
   
   if (mouseClicks % 10 == 0)
     background((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
@@ -73,8 +73,8 @@ void draw() {
     }
   }
   textSize(20);
-  text("Total Number of Dots: " +sum, 0, 825);
-  text("Clicks: " + mouseClicks, 300, 825);
+  text("Total Number of Dots: " +sum, 0, 725);
+  text("Clicks: " + mouseClicks, 300, 725);
 }
 
 int mouseClicks = 0;
