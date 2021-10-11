@@ -59,22 +59,33 @@ void setup()
 void draw() {
   int sum = 0;
   int random = (int)(Math.random()*10)+1;
-  
-  if (mouseClicks % 10 == 0)
+
+  if (mouseClicks == 100 && mouseClicks != 0) {
     background((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
-  else 
+    text("Oh, you actually clicked 100 times... now I feel bad", 0, 545);
+  } else if (mouseClicks == 52 && mouseClicks != 0) {
     background(250, 250, 250);
-    
-  for (int i = 0; i < random; i++) {
-    for (int j = 0; j < random; j++) {
-      dean = new Dice (j*50, i*50);
-      dean.show();
-      sum = sum + dean.dots;
-    }
+    text("The real surprise is at 100 clicks", 70, 545);
+  } else if (mouseClicks == 50 && mouseClicks != 0) {
+    background((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+    text("LOL only the background changes color but wait..", 0, 545);
+  } else if ((mouseClicks == 25 || mouseClicks == 75) && mouseClicks != 0) {
+    background(250, 250, 250);
+    text("Almost there!!", 200, 545);
+} else 
+background(250, 250, 250);
+
+
+for (int i = 0; i < random; i++) {
+  for (int j = 0; j < random; j++) {
+    dean = new Dice (j*50, i*50);
+    dean.show();
+    sum = sum + dean.dots;
   }
-  textSize(20);
-  text("Total Number of Dots: " +sum, 0, 525);
-  text("Clicks: " + mouseClicks, 300, 525);
+}
+textSize(20);
+text("Total Number of Dots: " +sum, 50, 525);
+text("Clicks: " + mouseClicks, 350, 525);
 }
 
 int mouseClicks = 0;
